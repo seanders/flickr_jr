@@ -22,6 +22,8 @@ require 'erb'
 require 'carrierwave'
 require 'mini-magick'
 
+require 'carrierwave'
+
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
