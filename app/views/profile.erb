@@ -1,0 +1,11 @@
+<div class="container">
+
+
+
+Hopefully We'll have some albums here
+<ol>
+<% current_user.albums.each do |album| %>
+  <li><%=album.name%></li>
+  <%end%>
+</ol>
+</div>

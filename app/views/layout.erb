@@ -18,6 +18,18 @@
   <title></title>
 </head>
 <body>
+  <header>
+  <h3>Flicker 'n shit</h3>
+  <% if current_user %>
+    <h3 class ="log_in_header">Welcome, <a href="/user/<%=current_user.id%>"><%=current_user.name%> </a> </h3>
+    <a href='/logout'>Click here to logout</a>
+    <a href='/newalbum'>Click here to create an album</a>
+    <% else %>
+    <a href='/login'>Click here to log in!</a>
+    <a href='/signup'>Click here to sign up!</a>
+    <% end %>
+    <div class="header_buttons" id="submit"><a href="/upload">Upload a picture!</a></div>
+  </header>
   <%= yield %>
 </body>
 </html>
