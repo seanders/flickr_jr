@@ -1,0 +1,8 @@
+<div class="container">
+  <ol>
+  <% @photos.each do |photo| %>
+  <li><img src="<%= photo.image.url %>"></li>
+  <% end %>
+</ol>
+
+</div>

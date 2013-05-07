@@ -24,6 +24,11 @@ get '/newalbum' do
   erb :newalbum
 end
 
+post '/newalbum' do
+  current_user.albums << Album.create(name: params[:album][:name], description: params[:album][:description])
+  erb :profile
+end
+
 
 post '/signup' do
   @user = User.create(params[:user])
@@ -37,7 +42,7 @@ post '/signup' do
 end
 
 post '/login' do
-  @user = User.authenticate(params["user"]["name"], params["user"]["password"])
+  @user = User.authenticate(params[:user][:name], params[:user][:password])
   if @user
     session[:id] = @user.id
     erb :profile
@@ -63,10 +68,15 @@ post '/upload' do
   @photo.save!
 
   if @photo.save
-    redirect '/user/#{current_user.id}/albums/#{album_destination.id}/#{@photo.id}'
+    redirect "/albums/#{album_destination.id}"
   else
     session[:errors] = "failed to save photo"
     redirect "/upload"
   end
 end
 
+get '/albums/:album_id' do
+  @album = Album.find(params[:album_id])
+  @photos = @album.photos
+  erb :albums
+end

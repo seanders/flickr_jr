@@ -7,3 +7,11 @@
 th {
   text-align: left;
 }
+
+.header_buttons {
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: grey;
+  width: 150px;
+  float: left;
+}

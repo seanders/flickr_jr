@@ -5,7 +5,7 @@
 Hopefully We'll have some albums here
 <ol>
 <% current_user.albums.each do |album| %>
-  <li><%=album.name%></li>
+  <li><a href="/albums/<%=album.id%>"><%=album.name%></li></a>
   <%end%>
 </ol>
 </div>
