@@ -11,6 +11,7 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
@@ -22,14 +23,15 @@
   <h3>Flicker 'n shit</h3>
   <% if current_user %>
     <h3 class ="log_in_header">Welcome, <a href="/profile"><%=current_user.name%> </a> </h3>
-    <a href='/logout'>Click here to logout</a>
+    <a class="header_buttons" href='/logout'>Click here to logout</a>
     <div class='header_buttons' id="album_submit">Click here to create an album</div>
     <% else %>
-    <a href='/login'>Click here to log in!</a>
-    <a href='/signup'>Click here to sign up!</a>
+    <a class="header_buttons" href='/login'>Click here to log in!</a>
+    <a class="header_buttons" href='/signup'>Click here to sign up!</a>
     <% end %>
-    <div class="header_buttons" id="picture_submit">Upload a picture!</div>
+    <div class='btn btn-primary' id="picture_submit">Upload a picture!</div>
   </header>
   <%= yield %>
+  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-.container {
+/*.container {
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
@@ -15,3 +15,8 @@ th {
   width: 150px;
   float: left;
 }
+
+.header_buttons a: {
+  text-decoration: none;
+
+}*/

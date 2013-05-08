@@ -2,12 +2,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   storage :file
 
-  process :resize_to_fit => [200,200]
+  process :resize_to_fit => [300,300]
 
-  # def identifier!
-  #   self.image.identifier
-  # end
-  # def store_dir
-  #   "../uploads"
-  # end
+  version :thumb do
+    process :resize_to_fill => [100,100]
+  end
 end
